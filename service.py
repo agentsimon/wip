@@ -1,6 +1,6 @@
-import display_conf
-import data_collect
 import time
+import data_collect
+import display_conf
 
 
 if __name__ == '__main__':
@@ -9,11 +9,3 @@ if __name__ == '__main__':
 
     data = data_collect.get_data()
     display_conf.data2_display(data, hour_req=0)
-    
-
-
-
-
-        
-    
-    
