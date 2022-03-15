@@ -15,18 +15,23 @@ current_weather_active = 0
 forecast_active = 0
 
 # Add global variable for the current screen state
+
+
 def fetch_data():
     print('Fetching data: %s' % datetime.now())
     fetch_active = 0
-    #This could be fetch fresh data
+    # This could be fetch fresh data
+
 
 def display_data():
     print('Displaying data: %s' % datetime.now())
-    #This could be change the screen depending on its current state
+    # This could be change the screen depending on its current state
+
 
 def adverts_display():
     print('Displaying adverts: %s' % datetime.now())
-    #This could be change the screen depending on its current state
+    # This could be change the screen depending on its current state
+
 
 if __name__ == '__main__':
     scheduler_fetch = BackgroundScheduler()
@@ -44,10 +49,6 @@ if __name__ == '__main__':
         if scheduler_display.running:
             scheduler_display.shutdown()
             print("Here we are")
-
-
-
-
 
     scheduler_adverts = BackgroundScheduler()
     scheduler_adverts.add_job(adverts_display, 'interval', seconds=10)
