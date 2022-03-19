@@ -3,7 +3,7 @@ import requests
 from PIL import Image
 from io import BytesIO
 import datetime
-
+# from datetime import datetime
 
 display = pygame.display.set_mode((480, 256))
 
@@ -36,10 +36,11 @@ def data2_display(data, hour_req):
     #current_weather = h1_font.render('Current weather', True, (255,255,255))
     date_info = data["hourly"][hour_req]["dt"]
     current_weather = font.render((datetime.datetime.fromtimestamp(
-        data["hourly"][hour_req]["dt"]).strftime('%m-%d %H:%M')), True, (255, 255, 255))
+        data["hourly"][hour_req]["dt"]).strftime('%b %d, %Y - %H:%M')), True, (255, 255, 255))
+    # .strftime("%b %d, %Y")
     display.blit(current_weather, (10, 30))
     current_temp = font.render(
-        'Temperature: '+f'{(data["hourly"][hour_req]["temp"])-273:.2f} C', True, (255, 255, 255))
+        'Temperature: '+f'{(data["hourly"][hour_req]["temp"])-273:.0f}°c', True, (255, 255, 255))
     display.blit(
         current_temp, ((display.get_width()-current_temp.get_width())-20, 90))
     current_hum = font.render(
@@ -47,7 +48,7 @@ def data2_display(data, hour_req):
     display.blit(
         current_hum, ((display.get_width()-current_hum.get_width())-20, 120))
     current_wind = font.render(
-        'Wind speed: '+f'{(((data["hourly"][hour_req]["wind_speed"])*3600)/1000):.0f}  kph', True, (255, 255, 255))
+        'Wind speed: '+f'{(((data["hourly"][hour_req]["wind_speed"])*3600)/1000):.0f}(kph)', True, (255, 255, 255))
     display.blit(
         current_wind, ((display.get_width()-current_wind.get_width())-20, 150))
     display.blit(current_weather, (10, 30))

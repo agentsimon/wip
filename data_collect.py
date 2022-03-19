@@ -3,8 +3,10 @@ import json
 from io import BytesIO
 from PIL import Image
 
-airvisualapi_key = "your_airvisual_api_key"
-openweatherapi_key = "your_openweather_api_key"
+# airvisualapi_key = "your_airvisual_api_key"
+# openweatherapi_key = "your_openweather_api_key"
+airvisualapi_key = "bc090102-2784-4deb-bd33-a0ddc88d51d3"
+openweatherapi_key = "bb721ae074c3ed596e0244f8c488f8a9"
 
 
 def get_data():
